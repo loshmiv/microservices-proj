@@ -129,4 +129,8 @@ dmypy.json
 .pyre/
 
 admin/.dbdata/
-admin/requirements.txt
+#admin/requirements.txt
+
+
+main/.dbdata/
+main/.main-venv/
