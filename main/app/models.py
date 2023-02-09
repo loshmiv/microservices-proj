@@ -12,6 +12,14 @@ class Product(db.Model):
     title = db.Column(db.String(200))
     image = db.Column(db.String(200))
 
+    @property
+    def serialized(self):
+        return {
+            'id': self.id,
+            'title': self.title,
+            'image': self.image
+        }
+
 @dataclass
 class ProductUser(db.Model):
     id: int

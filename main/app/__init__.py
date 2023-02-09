@@ -1,7 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-#from models import Product, ProductUser
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -13,6 +12,8 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db)
 
+    from app.api import bp as api_bp
+    app.register_blueprint(api_bp, url_prefix='/api')
 
     return app
 

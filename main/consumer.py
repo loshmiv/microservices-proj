@@ -28,7 +28,7 @@ def callback(ch, method, propertis, body):
             print('Product created')
 
     elif propertis.content_type == 'product_updated':
-        product = Product.query.get(data['id'])
+        product = db.get_or_404(Product, data['id'])
         product.title = data['title']
         product.image = data['image']
         with app.app_context():
@@ -36,7 +36,7 @@ def callback(ch, method, propertis, body):
             print('Product updated')
 
     elif propertis.content_type == 'product_deleted':
-        product = Product.query.get(data)
+        product = db.get_or_404(Product, data)
         with app.app_context():
             db.session.delete(product)
             db.session.commit()
