@@ -130,6 +130,7 @@ dmypy.json
 
 admin/.dbdata/
 #admin/requirements.txt
+env/
 
 
 main/.dbdata/

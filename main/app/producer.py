@@ -8,7 +8,7 @@ connection = pika.BlockingConnection(params)
 
 channel = connection.channel()
 
-channel.queue_declare(queue='main')
+#channel.queue_declare(queue='main')
 
 def publish(method, body):
     properties = pika.BasicProperties(method)

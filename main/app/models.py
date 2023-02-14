@@ -8,7 +8,7 @@ class Product(db.Model):
     title: str
     image: str
 
-    id = db.Column(db.Integer, primary_key=True, autoincrement=False)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String(200))
     image = db.Column(db.String(200))
 
